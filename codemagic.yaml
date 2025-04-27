@@ -8,7 +8,7 @@ workflows:
         XCODE_WORKSPACE: "SmokeTracker.xcworkspace"
         XCODE_SCHEME: "SmokeTracker"
       ios_signing:
-        bundle_identifier: "com.tonnomutilisateur.SmokeTracker"
+        bundle_identifier: "com.RABI46.suivi-cigarette-ios"
     scripts:
       - name: Configurer et installer les dépendances
         script: |
