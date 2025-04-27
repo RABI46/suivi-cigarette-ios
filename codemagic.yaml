@@ -7,10 +7,9 @@ workflows:
       vars:
         XCODE_WORKSPACE: "SmokeTracker.xcworkspace"
         XCODE_SCHEME: "SmokeTracker"
-        ios_signing:
-  bundle_identifier: "com.rabi46.suivi-cigarette-ios"
-  distribution_type: "development"
-
+      ios_signing:
+        bundle_identifier: "com.rabi46.suivi-cigarette-ios"
+        distribution_type: "development"
     scripts:
       - name: Configurer et installer les dépendances
         script: |
