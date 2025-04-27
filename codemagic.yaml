@@ -1,0 +1,24 @@
+workflows:
+  ios-build:
+    name: iOS Build
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      vars:
+        XCODE_WORKSPACE: "SmokeTracker.xcworkspace"
+        XCODE_SCHEME: "SmokeTracker"
+      ios_signing:
+        bundle_identifier: "com.tonnomutilisateur.SmokeTracker"
+    scripts:
+      - name: Configurer et installer les dépendances
+        script: |
+          brew install cocoapods
+          pod install
+      - name: Compiler l'application
+        script: |
+          xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -sdk iphoneos -configuration Release archive -archivePath $HOME/build/SmokeTracker.xcarchive
+      - name: Exporter le fichier IPA
+        script: |
+          xcodebuild -exportArchive -archivePath $HOME/build/SmokeTracker.xcarchive -exportOptionsPlist ./exportOptions.plist -exportPath $HOME/build/
+    artifacts:
+      - build/**/*.ipa
