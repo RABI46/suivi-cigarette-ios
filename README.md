@@ -15,8 +15,4 @@ SmokeTracker aide les utilisateurs à **réduire leur consommation de cigarettes
 - **Charts** pour les statistiques
 - **UserNotifications** pour les rappels
 
-## 🔧 Installation
-1. **Clone le repo GitHub** :
-   ```sh
-   git clone https://github.com/TonNomUtilisateur/SmokeTracker.git
-   cd SmokeTracker
+Fait par Rabi 46
